@@ -1,0 +1,1742 @@
+/*-- scss:defaults --*/
+
+// =============================================================================
+// CLEAN TACTILE PLAYBOOK PALETTE (Warm Paper, Solid Ink Borders, Pastel Accents)
+// =============================================================================
+
+$siteBgColorCustom:       #F5EFE6 !default; // Warm drafting paper / linen canvas
+$sidebarBgColorCustom:    #FFFFFF !default;
+$textColorCustom:         #18181B !default; // Crisp deep ink
+$sidebarTextColorCustom:  #18181B !default;
+
+$headlineColorCustom:     #1B4332 !default; // Deep botanical pine / rich moss
+$headingColorCustom:      #2D5A43 !default; // Woodland foliage green
+$bodyLinkColorCustom:     #2D6A4F !default; // Crisp botanical green
+$navLinkColorCustom:      #2D5A43 !default;
+$sidebarLinkColorCustom:  #2D5A43 !default;
+$subtitleColorCustom:     #4A6353 !default; // Soft earthy sage
+$footerTextColorCustom:   #52525B !default;
+
+$buttonTextColorCustom:      #18181B !default;
+$buttonHoverTextColorCustom: #09090B !default;
+$buttonBgColorCustom:       #C6E7D2 !default; // Soft mint green
+$buttonHoverBgColorCustom:  #B5DEC3 !default;
+$borderColorCustom:         #18181B !default; // Solid crisp black border
+$cardBgColorCustom:         #FFFFFF !default; // Clean white card surface
+
+// Tactile Pastel & Outline Tokens
+$accentMintCustom:        #C6E7D2 !default; // Mint / sage active accent
+$accentLavenderCustom:    #DDD8F5 !default; // Soft periwinkle / lavender
+$accentBlueCustom:        #D2E4F9 !default; // Soft sky component blue
+$accentButterCustom:      #FEF3C7 !default; // Warm butter / callout note
+$accentRoseCustom:        #FED7D7 !default; // Soft coral / warning
+$borderInkWidth:          1.5px !default;
+
+// Colours that used to be hard-coded; named so the dark theme can swap them
+$surfaceColorCustom:      #FFFFFF !default; // photo frames, thumbnail cards
+$inlineCodeTextCustom:    #18181B !default;
+$mutedTextColorCustom:    #52525B !default;
+$thumbBgColorCustom:      #FAF7F2 !default;
+$onAccentColorCustom:     #18181B !default; // text on an accent button
+$accentWarmColorCustom:   #B55D2B !default;
+
+// Typography ------------------------------------------------------------------
+$font-size-root: 16px;
+$font-family-serif: "IBM Plex Sans Thai Looped", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-sans-serif: "IBM Plex Sans Thai Looped", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-base: "IBM Plex Sans Thai Looped", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-monospace: "Fira Code", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+// Bootstrap / Quarto overrides ------------------------------------------------
+$body-bg: $siteBgColorCustom;
+$body-color: $textColorCustom;
+$link-color: $bodyLinkColorCustom;
+$link-hover-color: darken(saturate($bodyLinkColorCustom, 15%), 10%);
+
+$input-bg: #FFFFFF;
+$popover-bg: #FFFFFF;
+$navbar-bg: $siteBgColorCustom;
+$navbar-fg: $navLinkColorCustom;
+$code-block-bg: #FFFFFF;
+
+/*-- scss:rules --*/
+
+// =============================================================================
+// BASE & TYPOGRAPHY
+// =============================================================================
+
+body {
+  font-family: $font-family-sans-serif;
+  font-weight: 400;
+  line-height: 1.8;
+  color: $textColorCustom;
+  background-color: $siteBgColorCustom;
+}
+
+h1, h2, h3, h4, h5, h6,
+.title, .h1, .h2, .h3, .h4 {
+  font-family: $font-family-serif;
+  color: $headingColorCustom;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h1, .h1 {
+  font-size: 2.1rem;
+  line-height: 1.3;
+  color: $headlineColorCustom;
+}
+
+h2, .h2 {
+  font-size: 1.45rem;
+  color: $headingColorCustom;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+h3, .h3 {
+  font-size: 1.2rem;
+  color: lighten($headingColorCustom, 4%);
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+p, li {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+p strong, p b, li strong, li b {
+  font-weight: 600;
+  color: $headlineColorCustom;
+}
+
+a {
+  color: $bodyLinkColorCustom;
+  transition: color 0.15s ease-in-out;
+}
+
+blockquote, .blockquote {
+  border-left: 3px solid $headingColorCustom;
+  padding-left: 1.25rem;
+  margin: 1.5rem 0;
+  color: $inlineCodeTextCustom !important;
+  font-style: italic;
+}
+
+hr {
+  border-color: $borderColorCustom;
+  opacity: 0.8;
+}
+
+// Code & Pre ------------------------------------------------------------------
+code, kbd, samp, pre {
+  font-family: $font-family-monospace;
+}
+
+p code:not(.sourceCode), li code:not(.sourceCode), td code:not(.sourceCode), th code:not(.sourceCode) {
+  font-family: $font-family-monospace;
+  background-color: $surfaceColorCustom !important;
+  color: $inlineCodeTextCustom;
+  border: 1px solid rgba($borderColorCustom, 0.45);
+  padding: 0.1em 0.4em;
+  border-radius: 6px;
+  font-size: 0.88em;
+  box-shadow: none;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone; // wrapped code keeps its rounded ends
+}
+
+// Code inside headings: tinted pill in the site palette, not Bootstrap purple
+:is(h1, h2, h3, h4, h5, h6) code:not(.sourceCode) {
+  font-family: $font-family-monospace;
+  font-size: 0.9em;
+  color: inherit;
+  background-color: $accentMintCustom;
+  border: 1px solid rgba($borderColorCustom, 0.45);
+  border-radius: 6px;
+  padding: 0.05em 0.35em;
+}
+
+pre code {
+  font-size: 0.9rem;
+  font-family: $font-family-monospace;
+}
+
+div.sourceCode {
+  background-color: $surfaceColorCustom !important;
+  border: $borderInkWidth solid $borderColorCustom;
+  border-radius: 12px;
+  box-shadow: 2.5px 2.5px 0px $borderColorCustom;
+}
+
+div.cell-output pre {
+  background-color: $surfaceColorCustom !important;
+  border: $borderInkWidth solid $borderColorCustom;
+  border-radius: 12px;
+  box-shadow: 2.5px 2.5px 0px $borderColorCustom;
+  padding: 1rem;
+}
+
+// =============================================================================
+// NAVBAR (Clean Tactile Bento Style)
+// =============================================================================
+
+.navbar {
+  border-bottom: $borderInkWidth solid $borderColorCustom;
+  background-color: $siteBgColorCustom !important;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.navbar-brand {
+  font-family: $font-family-serif;
+  color: $headingColorCustom !important;
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+
+  img,
+  .navbar-logo {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin-right: 0.45rem;
+    height: 1.65rem;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.navbar .nav-link {
+  font-family: $font-family-sans-serif;
+  color: $navLinkColorCustom !important;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  border: 1.5px solid transparent;
+  transition: all 0.15s ease-in-out;
+  margin: 0 0.15rem;
+
+  &:hover {
+    background-color: $surfaceColorCustom;
+    border-color: $borderColorCustom;
+    box-shadow: 2px 2px 0px $borderColorCustom;
+    transform: translate(-1px, -1px);
+  }
+
+  &.active {
+    background-color: $accentMintCustom !important;
+    border-color: $borderColorCustom !important;
+    color: $headlineColorCustom !important;
+    box-shadow: 2px 2px 0px $borderColorCustom;
+  }
+
+  &::after {
+    display: none;
+  }
+}
+
+.quarto-navigation-tool {
+  color: $navLinkColorCustom !important;
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid transparent;
+  border-radius: 8px;
+  padding: 0.25rem 0.45rem;
+  transition: all 0.15s ease-in-out;
+
+  &:hover {
+    background-color: $surfaceColorCustom;
+    border-color: $borderColorCustom;
+    box-shadow: 2px 2px 0px $borderColorCustom;
+  }
+}
+
+// Small screens: keep brand, tools and search on one row
+@media (max-width: 991.98px) {
+  // Bootstrap's `.navbar > .container-fluid { flex-wrap: inherit }` wraps the
+  // search icon onto a second row; only wrap while the menu is open
+  .navbar > .navbar-container { flex-wrap: nowrap; }
+  .navbar > .navbar-container:has(.navbar-collapse.show, .navbar-collapse.collapsing) { flex-wrap: wrap; }
+  .navbar-brand-container { min-width: 0; }
+  .navbar-brand { font-size: 1.1rem; }
+  .navbar-brand img, .navbar-brand .navbar-logo { margin-right: 0.3rem; }
+  .navbar > .navbar-container > .quarto-navbar-tools {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    align-items: center;
+  }
+  .quarto-navigation-tool { padding: 0.2rem 0.3rem; }
+}
+
+// =============================================================================
+// QUARTO ABOUT JOLLA (Clean Tactile Hero)
+// =============================================================================
+
+div.quarto-about-jolla {
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+  text-align: center;
+
+  // Tactile Avatar Image
+  .about-image {
+    border-radius: 24px !important;
+    border: 2px solid $borderColorCustom !important;
+    box-shadow: 4px 4px 0px $borderColorCustom !important;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.8rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0px $borderColorCustom !important;
+    }
+  }
+
+  // Header and Title block centered
+  #title-block-header.quarto-title-block.default,
+  .quarto-title-block,
+  .quarto-title {
+    text-align: center !important;
+  }
+
+  // Name / Title
+  .quarto-title h1.title,
+  h1.title {
+    font-family: $font-family-serif;
+    font-weight: 700;
+    font-size: clamp(2.8rem, 6vw, 4.2rem);
+    color: $headlineColorCustom;
+    line-height: 1.15;
+    margin-bottom: 0.35rem;
+    text-align: center !important;
+  }
+
+  // Subtitle
+  .quarto-title p.subtitle,
+  .quarto-title .lead,
+  p.subtitle {
+    font-family: $font-family-sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: $subtitleColorCustom;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center !important;
+  }
+
+  // Body content (Bio / Intro text)
+  #quarto-document-content {
+    max-width: 640px;
+    margin: 1.25rem auto 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: $textColorCustom;
+
+    p {
+      margin-bottom: 1.2rem;
+    }
+
+    .home-badges {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.5rem;
+
+      code {
+        background-color: $surfaceColorCustom !important;
+        color: $textColorCustom !important;
+        border: $borderInkWidth solid $borderColorCustom !important;
+        border-radius: 9999px;
+        padding: 0.35em 0.95em;
+        font-size: 0.85rem;
+        font-family: $font-family-monospace !important;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        white-space: nowrap; // keep each pill on one line
+        box-shadow: 2px 2px 0px $borderColorCustom;
+        transition: all 0.15s ease;
+
+        &:hover {
+          background-color: $accentMintCustom !important;
+          color: $headlineColorCustom !important;
+          border-color: $borderColorCustom !important;
+          transform: translate(-1.5px, -1.5px);
+          box-shadow: 3.5px 3.5px 0px $borderColorCustom;
+        }
+      }
+    }
+  }
+
+  // Divider
+  hr.about-sep {
+    border: 0;
+    border-top: $borderInkWidth solid $borderColorCustom;
+    width: 140px;
+    margin: 2rem auto;
+    opacity: 1;
+  }
+
+  // Social / Outbound Links
+  .about-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+
+    .about-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 1.15rem;
+      border: $borderInkWidth solid $borderColorCustom;
+      border-radius: 9999px;
+      background-color: $surfaceColorCustom;
+      color: $headingColorCustom;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      box-shadow: 2px 2px 0px $borderColorCustom;
+      transition: all 0.15s ease-in-out;
+
+      i {
+        font-size: 1.15rem;
+        line-height: 1;
+      }
+
+      &:hover {
+        background-color: $accentMintCustom;
+        border-color: $borderColorCustom;
+        color: $headlineColorCustom;
+        transform: translate(-1.5px, -1.5px);
+        box-shadow: 3.5px 3.5px 0px $borderColorCustom;
+      }
+
+      &:active {
+        transform: translate(1px, 1px);
+        box-shadow: 1px 1px 0px $borderColorCustom;
+      }
+    }
+  }
+}
+
+// =============================================================================
+// QUARTO ABOUT TRESTLES (Simon P. Couch About Page)
+// =============================================================================
+
+div.quarto-about-trestles {
+  margin-top: 1.5rem;
+  margin-bottom: 3.5rem;
+  display: grid;
+  grid-template-columns: minmax(340px, 460px) 1fr;
+  column-gap: 4rem;
+  row-gap: 2rem;
+  align-items: start;
+
+  @media (max-width: 992px) {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+
+  .about-entity {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    #title-block-header {
+      order: 1;
+      margin: 0 0 1.25rem 0;
+      text-align: center;
+    }
+
+    .about-image {
+      order: 2;
+      width: 100% !important;
+      max-width: 440px;
+      height: auto !important;
+      border-radius: 20px !important;
+      border: 2px solid $borderColorCustom !important;
+      box-shadow: 4px 4px 0px $borderColorCustom !important;
+      object-fit: cover;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      &:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 6px 6px 0px $borderColorCustom !important;
+      }
+    }
+
+    .about-links {
+      order: 3;
+    }
+
+    h1.title,
+    h2.title,
+    .title {
+      font-family: $font-family-serif;
+      font-weight: 700;
+      font-size: 2.2rem;
+      color: $headlineColorCustom;
+      margin-bottom: 0.25rem;
+      line-height: 1.2;
+    }
+
+    p.subtitle,
+    .lead {
+      font-family: $font-family-sans-serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: $subtitleColorCustom;
+      margin-top: 0.35rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.4;
+    }
+
+    .about-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 1rem;
+
+      .about-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: $borderInkWidth solid $borderColorCustom;
+        border-radius: 10px;
+        background-color: $surfaceColorCustom;
+        color: $headlineColorCustom;
+        text-decoration: none;
+        font-size: 1.15rem;
+        box-shadow: 2px 2px 0px $borderColorCustom;
+        transition: all 0.15s ease-in-out;
+
+        i {
+          line-height: 1;
+        }
+
+        .about-link-text {
+          display: none; // icon only
+        }
+
+        &:hover {
+          background-color: $accentMintCustom;
+          border-color: $borderColorCustom;
+          color: $headlineColorCustom;
+          transform: translate(-1.5px, -1.5px);
+          box-shadow: 3.5px 3.5px 0px $borderColorCustom;
+        }
+
+        &:active {
+          transform: translate(1px, 1px);
+          box-shadow: 1px 1px 0px $borderColorCustom;
+        }
+      }
+    }
+  }
+
+  .about-contents {
+    h1.title,
+    .quarto-title h1.title,
+    h1:first-child {
+      font-family: $font-family-serif;
+      font-weight: 600;
+      font-size: clamp(2.2rem, 3.8vw, 3rem);
+      color: $headingColorCustom;
+      line-height: 1.2;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+      color: $textColorCustom;
+    }
+  }
+}
+
+// =============================================================================
+// LISTINGS & BLOG POSTS (Simon Couch Style)
+// =============================================================================
+
+div.quarto-post .body h3.listing-title,
+div.quarto-post .body .listing-title.h3,
+div.quarto-post .body h3.listing-title a,
+div.quarto-post .body .listing-title.h3 a,
+.listing-title a {
+  font-family: $font-family-serif;
+  color: $headingColorCustom;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  font-weight: 500;
+
+  &:hover {
+    color: darken($headingColorCustom, 10%);
+  }
+}
+
+.quarto-listing-default .listing-item,
+div.quarto-post {
+  border-bottom: 1px solid $borderColorCustom;
+  padding: 1.75rem 0;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+
+  .metadata {
+    @media (min-width: 768px) {
+      flex: 0 0 170px;
+      max-width: 170px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .listing-date {
+      font-family: $font-family-sans-serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: $headingColorCustom;
+      line-height: 1.4;
+      transition: color 0.15s ease-in-out;
+    }
+
+    &:hover .listing-date {
+      color: darken($headingColorCustom, 12%);
+    }
+  }
+
+  .thumbnail {
+    flex: 0 0 170px;
+    max-width: 170px;
+    margin: 0;
+
+    a {
+      display: block;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid rgba($headingColorCustom, 0.12);
+      background-color: $surfaceColorCustom;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(42, 76, 57, 0.14);
+      }
+    }
+
+    img, .thumbnail-image, .card-img {
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+      display: block;
+      margin: 0;
+      border-radius: 7px;
+    }
+
+    p.card-img-top {
+      margin: 0;
+    }
+
+    .listing-item-img-placeholder {
+      display: none;
+    }
+  }
+
+  &:has(.listing-item-img-placeholder) .thumbnail {
+    display: none;
+  }
+}
+
+.quarto-grid-item {
+  border: $borderInkWidth solid $borderColorCustom !important;
+  border-radius: 14px;
+  background-color: $surfaceColorCustom;
+  box-shadow: 2.5px 2.5px 0px $borderColorCustom;
+  transition: all 0.18s ease;
+
+  &:hover {
+    transform: translate(-1.5px, -1.5px);
+    box-shadow: 4.5px 4.5px 0px $borderColorCustom;
+  }
+
+  .card-img-top {
+    border-radius: 12px 12px 0 0;
+    border-bottom: $borderInkWidth solid $borderColorCustom;
+  }
+}
+
+.listing-category,
+.quarto-category,
+.quarto-title .quarto-categories .quarto-category {
+  background-color: $surfaceColorCustom !important;
+  border: 1px solid $borderColorCustom !important;
+  color: $textColorCustom !important;
+  border-radius: 9999px !important;
+  font-family: $font-family-monospace;
+  text-transform: none;
+  font-size: 0.76rem;
+  font-weight: 500;
+  padding: 0.18em 0.7em;
+  box-shadow: 1px 1px 0px $borderColorCustom;
+  transition: all 0.15s ease;
+
+  &:hover {
+    background-color: $accentMintCustom !important;
+    color: $headlineColorCustom !important;
+    transform: translate(-1px, -1px);
+    box-shadow: 2px 2px 0px $borderColorCustom;
+  }
+}
+
+// Page Titles for inner pages
+#title-block-header,
+.quarto-title-block,
+#title-block-header.quarto-title-block.default {
+  text-align: left;
+  margin: 2.25rem 0 2rem 0;
+
+  .quarto-title {
+    text-align: left;
+
+    .quarto-categories {
+      justify-content: flex-start;
+    }
+  }
+
+  h1.title {
+    font-family: $font-family-serif;
+    font-weight: 700;
+    color: $headlineColorCustom;
+    font-size: clamp(1.8rem, 3.5vw, 2.3rem);
+    text-align: left;
+    margin-bottom: 0.5rem;
+  }
+
+  .description,
+  div.description,
+  .subtitle,
+  p.subtitle,
+  p.description {
+    color: $subtitleColorCustom;
+    font-size: 1.05rem;
+    font-weight: 400;
+    text-align: left;
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+// Images throughout the site
+.figure-img, .img-fluid, img {
+  border-radius: 6px;
+}
+
+// =============================================================================
+// FOOTER
+// =============================================================================
+
+.nav-footer {
+  border-top: 1px solid $borderColorCustom;
+  color: $footerTextColorCustom;
+  background-color: $siteBgColorCustom;
+  font-size: 0.9rem;
+  padding: 2rem 0;
+  margin-top: 3rem;
+  text-align: center;
+
+  .nav-footer-center {
+    text-align: center;
+    width: 100%;
+  }
+
+  a {
+    color: $footerTextColorCustom;
+    text-decoration: underline;
+
+    &:hover {
+      color: darken($footerTextColorCustom, 10%);
+    }
+  }
+}
+
+// =============================================================================
+// BLOG INDEX — list on the left, topic sidebar on the right
+// (scoped to the page that uses blog/_post-list.ejs)
+// =============================================================================
+
+body:has(.post-list) {
+  $mutedText: $mutedTextColorCustom;
+  $pillBg: rgba($headingColorCustom, 0.08);
+
+  // Page header: big title left, description right, rule underneath
+  #title-block-header.quarto-title-block {
+    grid-column: body-content-start / page-end-inset;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.5rem 2rem;
+    margin: 2rem 0 1.5rem;
+    padding-bottom: 1.1rem;
+    border-bottom: 1px solid $borderColorCustom;
+
+    .quarto-title h1.title {
+      font-size: clamp(2.2rem, 4.5vw, 3rem);
+      font-weight: 700;
+      color: $headlineColorCustom;
+      letter-spacing: -0.02em;
+      margin: 0;
+      line-height: 1.15;
+    }
+
+    .description, div.description, p.description {
+      margin: 0.25rem 0 0 !important;
+      color: $subtitleColorCustom;
+      font-size: 1.05rem;
+    }
+
+    .quarto-title-meta { display: none; }
+  }
+
+  // Filter pills
+  .post-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0.25rem 0 1rem;
+  }
+
+  .post-filter {
+    border: $borderInkWidth solid $borderColorCustom;
+    border-radius: 9999px;
+    padding: 0.35rem 1rem;
+    background: $surfaceColorCustom;
+    color: $textColorCustom;
+    font-family: $font-family-sans-serif;
+    font-size: 0.92rem;
+    font-weight: 500;
+    line-height: 1.6;
+    cursor: pointer;
+    box-shadow: 1.5px 1.5px 0px $borderColorCustom;
+    transition: all 0.15s ease;
+
+    &:hover {
+      background: $surfaceColorCustom;
+      transform: translate(-1px, -1px);
+      box-shadow: 2.5px 2.5px 0px $borderColorCustom;
+    }
+
+    &.active {
+      background: $accentMintCustom !important;
+      border-color: $borderColorCustom !important;
+      color: $headlineColorCustom !important;
+      box-shadow: 2px 2px 0px $borderColorCustom;
+      font-weight: 600;
+    }
+
+    &:active {
+      transform: translate(1px, 1px);
+      box-shadow: 1px 1px 0px $borderColorCustom;
+    }
+  }
+
+  // Post rows
+  .post-list .post-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.75rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid $borderColorCustom;
+
+    &:last-child { border-bottom: 0; }
+  }
+
+  .post-row-body {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .post-date {
+    font-size: 0.88rem;
+    font-weight: 400;
+    color: $mutedText;
+    margin-bottom: 0.15rem;
+  }
+
+  .post-title {
+    margin: 0 0 0.45rem;
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1.35;
+
+    a {
+      color: $headlineColorCustom;
+      text-decoration: none;
+
+      &:hover {
+        color: $headingColorCustom;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        text-decoration-thickness: 1.5px;
+      }
+    }
+  }
+
+  .post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.55rem;
+
+    .listing-category {
+      cursor: pointer;
+      border-radius: 9999px;
+      padding: 0.05em 0.65em;
+      font-size: 0.78rem;
+      text-transform: none;
+      margin: 0;
+
+      &::before { content: "#"; opacity: 0.6; }
+    }
+  }
+
+  .post-desc-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .post-desc {
+    font-style: italic;
+    color: $mutedText;
+    font-size: 1rem;
+    line-height: 1.65;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .post-thumb {
+    flex: 0 0 200px;
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    border: $borderInkWidth solid $borderColorCustom;
+    box-shadow: 2px 2px 0px $borderColorCustom;
+    transition: all 0.15s ease;
+
+    img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      display: block;
+      border-radius: 0;
+    }
+
+    &:hover {
+      transform: translate(-1.5px, -1.5px);
+      box-shadow: 3.5px 3.5px 0px $borderColorCustom;
+    }
+  }
+
+  // Right sidebar: "Recommended topics" with tag pills
+  #quarto-margin-sidebar {
+    border-left: 1px solid $borderColorCustom;
+    padding-left: 1.75rem;
+    margin-top: 8.5rem; // line up with the filter pills, below the page header
+    max-height: none;
+    overflow: visible;
+  }
+
+  // 1 "All" pill + top 12 topics; the rest behind the toggle
+  .quarto-listing-category.is-collapsed .category:nth-child(n + 14) {
+    display: none;
+  }
+
+  .topics-more {
+    margin-top: 0.85rem;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: $headingColorCustom;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+  }
+
+  .quarto-listing-category-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: $textColorCustom;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+
+  .quarto-listing-category {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    .category {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.35rem;
+      padding: 0.25rem 0.8rem;
+      border: 1px solid $borderColorCustom;
+      border-radius: 9999px;
+      background: $surfaceColorCustom;
+      color: $textColorCustom;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      white-space: nowrap; // a pill never breaks across lines
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: pointer;
+      box-shadow: 1px 1px 0px $borderColorCustom;
+      transition: all 0.15s ease;
+
+      &:not([data-category=""])::before { content: "#"; margin-right: -0.3rem; }
+      &:hover {
+        background: $surfaceColorCustom;
+        transform: translate(-1px, -1px);
+        box-shadow: 2px 2px 0px $borderColorCustom;
+      }
+
+      &.active {
+        background: $accentMintCustom !important;
+        border: $borderInkWidth solid $borderColorCustom !important;
+        color: $headlineColorCustom !important;
+        box-shadow: 2px 2px 0px $borderColorCustom;
+        font-weight: 600;
+        .quarto-category-count { color: $headlineColorCustom; opacity: 0.85; }
+      }
+    }
+
+    .quarto-category-count {
+      color: rgba($textColorCustom, 0.7);
+      font-family: $font-family-monospace;
+      font-size: 0.85em;
+    }
+  }
+
+  // Tablet: the topic column is narrow, so tighten it
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    #quarto-margin-sidebar { padding-left: 1rem; }
+    .quarto-listing-category {
+      gap: 0.4rem;
+      .category { font-size: 0.8rem; padding: 0.2rem 0.6rem; }
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .post-thumb { flex-basis: 110px; img { height: 72px; } }
+    .post-title { font-size: 1.2rem; }
+    #quarto-margin-sidebar { border-left: 0; padding-left: 0; }
+  }
+}
+
+// =============================================================================
+// BOOKS PAGE (books/_book-list.ejs): cards with read / GitHub buttons
+// =============================================================================
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem 1.3rem 1.1rem;
+  background-color: $surfaceColorCustom;
+  border: $borderInkWidth solid $borderColorCustom;
+  border-radius: 14px;
+  box-shadow: 2.5px 2.5px 0px $borderColorCustom;
+
+  .book-title {
+    margin: 0 0 0.4rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.4;
+
+    a { color: $headlineColorCustom; text-decoration: none; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  }
+
+  .book-status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 0.65rem;
+
+    .listing-category { cursor: default; }
+  }
+
+  .book-desc {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: $textColorCustom;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+  }
+
+  .book-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.55rem;
+    padding-top: 0.85rem;
+    border-top: 1px dashed rgba($textColorCustom, 0.3);
+  }
+
+  .book-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $headlineColorCustom;
+    background-color: $surfaceColorCustom;
+    border: $borderInkWidth solid $borderColorCustom;
+    border-radius: 9999px;
+    box-shadow: 2px 2px 0px $borderColorCustom;
+    text-decoration: none;
+    transition: all 0.15s ease;
+
+    &:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0px $borderColorCustom;
+      text-decoration: none;
+    }
+
+    &:active {
+      transform: translate(1px, 1px);
+      box-shadow: 1px 1px 0px $borderColorCustom;
+    }
+  }
+
+  .book-btn-primary { background-color: $accentMintCustom; }
+
+  .book-btn-plain {
+    margin-left: auto;
+    padding: 0.35rem 0.2rem;
+    border: 0;
+    box-shadow: none;
+    background: none;
+    font-weight: 500;
+    color: $mutedTextColorCustom;
+
+    &:hover { transform: none; box-shadow: none; color: $headingColorCustom; }
+  }
+}
+
+// =============================================================================
+// LISTING PAGINATION (tactile pills instead of Bootstrap blue)
+// =============================================================================
+.listing-pagination .pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 1.5rem;
+
+  .page-item .page-link {
+    min-width: 2.3rem;
+    padding: 0.3rem 0.75rem;
+    text-align: center;
+    font-family: $font-family-monospace;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: $textColorCustom;
+    background-color: $surfaceColorCustom;
+    border: 1px solid $borderColorCustom;
+    border-radius: 9999px !important;
+    box-shadow: 1.5px 1.5px 0px $borderColorCustom;
+    transition: all 0.15s ease;
+
+    &:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 2.5px 2.5px 0px $borderColorCustom;
+    }
+
+    &:focus { box-shadow: 1.5px 1.5px 0px $borderColorCustom; }
+  }
+
+  .page-item.active .page-link {
+    background-color: $accentMintCustom;
+    color: $headlineColorCustom;
+    border: $borderInkWidth solid $borderColorCustom;
+    font-weight: 700;
+  }
+
+  // the "..." gap marker: plain text, not a button
+  .page-item.disabled .page-link {
+    color: $mutedTextColorCustom;
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    min-width: auto;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+}
+
+// =============================================================================
+// TALKS & POSTERS GRID
+// =============================================================================
+
+.talks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 3.5rem;
+
+  .talk-card {
+    background-color: $cardBgColorCustom;
+    border: $borderInkWidth solid $borderColorCustom;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 2.5px 2.5px 0px $borderColorCustom;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.18s ease;
+
+    &:hover {
+      transform: translate(-1.5px, -1.5px);
+      box-shadow: 4.5px 4.5px 0px $borderColorCustom;
+    }
+
+    .talk-thumb {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: top;
+      background-color: $thumbBgColorCustom;
+      border-bottom: $borderInkWidth solid $borderColorCustom;
+      display: block;
+      border-radius: 0;
+      transition: opacity 0.2s ease;
+
+      &:hover {
+        opacity: 0.92;
+      }
+    }
+
+    .talk-body {
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+
+      .talk-meta {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+
+        .talk-badge,
+        .talk-badge-type {
+          font-family: $font-family-monospace;
+          font-size: 0.76rem;
+          font-weight: 600;
+          padding: 0.12rem 0.65rem;
+          border: 1px solid $borderColorCustom;
+          border-radius: 9999px;
+          color: $textColorCustom;
+        }
+
+        .talk-badge { background-color: $accentMintCustom; }
+        .talk-badge-type { background-color: $accentButterCustom; }
+      }
+
+      h3 {
+        font-family: $font-family-serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: $headingColorCustom;
+        margin-top: 0;
+        margin-bottom: 0.65rem;
+        line-height: 1.35;
+      }
+
+      p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: $textColorCustom;
+        margin-bottom: 1.25rem;
+        flex-grow: 1;
+      }
+
+      .talk-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.65rem;
+        margin-top: auto;
+        padding-top: 0.85rem;
+        border-top: 1px dashed rgba($textColorCustom, 0.3);
+
+        .talk-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          background-color: $accentMintCustom;
+          color: $headlineColorCustom !important;
+          border: $borderInkWidth solid $borderColorCustom;
+          border-radius: 9999px;
+          box-shadow: 2px 2px 0px $borderColorCustom;
+          padding: 0.45rem 1rem;
+          font-size: 0.85rem;
+          font-weight: 600;
+          text-decoration: none;
+          transition: all 0.15s ease;
+
+          &:hover {
+            background-color: lighten($accentMintCustom, 5%);
+            transform: translate(-1px, -1px);
+            box-shadow: 3px 3px 0px $borderColorCustom;
+            color: $headlineColorCustom !important;
+            text-decoration: none;
+          }
+        }
+
+        .talk-btn-outline {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.4rem;
+          background-color: $surfaceColorCustom;
+          color: $headlineColorCustom !important;
+          border: $borderInkWidth solid $borderColorCustom;
+          border-radius: 9999px;
+          box-shadow: 2px 2px 0px $borderColorCustom;
+          padding: 0.45rem 1rem;
+          font-size: 0.85rem;
+          font-weight: 600;
+          text-decoration: none;
+          transition: all 0.15s ease;
+
+          &:hover {
+            background-color: $surfaceColorCustom;
+            transform: translate(-1px, -1px);
+            box-shadow: 3px 3px 0px $borderColorCustom;
+            color: $headlineColorCustom !important;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// On small screens a table wider than the page scrolls inside itself,
+// instead of making the whole page scroll sideways.
+@media (max-width: 767.98px) {
+  main.content table:not(.sourceCode table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+}
+
+// =============================================================================
+// HOMEPAGE: latest posts and featured work (below the jolla hero)
+// =============================================================================
+div.quarto-about-jolla #quarto-document-content .home-section {
+  text-align: left;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: $borderInkWidth solid $borderColorCustom;
+
+  h2 {
+    font-family: $font-family-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: $headingColorCustom;
+    margin: 0 0 1.25rem 0;
+    padding: 0;
+    border: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 7px;
+      height: 1.15em;
+      background-color: $accentMintCustom;
+      border: 1px solid $borderColorCustom;
+      border-radius: 4px;
+    }
+  }
+
+  .home-post {
+    display: block;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.85rem;
+    background-color: $surfaceColorCustom;
+    border: $borderInkWidth solid $borderColorCustom;
+    border-radius: 12px;
+    box-shadow: 2.5px 2.5px 0px $borderColorCustom;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    span { display: block; }
+
+    .home-post-date {
+      display: inline-block;
+      font-family: $font-family-monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: $textColorCustom;
+      background-color: $siteBgColorCustom;
+      border: 1px solid $borderColorCustom;
+      border-radius: 6px;
+      padding: 0.12rem 0.55rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .home-post-title {
+      font-family: $font-family-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.45;
+      color: $headlineColorCustom;
+      transition: color 0.15s ease;
+    }
+
+    .home-post-desc {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: rgba($textColorCustom, 0.85);
+      margin-top: 0.25rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      max-height: 3.2em;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    &:hover {
+      transform: translate(-1.5px, -1.5px);
+      box-shadow: 4px 4px 0px $borderColorCustom;
+
+      .home-post-title {
+        color: $headlineColorCustom;
+        text-decoration: none;
+      }
+    }
+  }
+
+  // Five fixed items: no pager or empty-state needed
+  .listing-pagination,
+  .listing-no-matching { display: none !important; }
+
+  .home-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 1.1rem;
+    padding: 0.45rem 1.15rem;
+    background-color: $surfaceColorCustom;
+    border: $borderInkWidth solid $borderColorCustom;
+    border-radius: 9999px;
+    box-shadow: 2px 2px 0px $borderColorCustom;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: $headlineColorCustom;
+    text-decoration: none;
+    transition: all 0.15s ease;
+
+    &:hover {
+      background-color: $accentMintCustom;
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0px $borderColorCustom;
+      color: $headlineColorCustom;
+      text-decoration: none;
+    }
+
+    &:active {
+      transform: translate(1px, 1px);
+      box-shadow: 1px 1px 0px $borderColorCustom;
+    }
+  }
+
+  p { margin-bottom: 0; }
+}
+
+// =============================================================================
+// WORK CARDS (homepage "featured work" and the Software page)
+// =============================================================================
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.95rem;
+  margin: 1rem 0 2rem 0;
+  text-align: left;
+
+  p { display: contents; margin: 0; }
+
+  // .work-desc is already a block; the <br> only adds an empty line
+  .work-card br { display: none; }
+
+  .work-card {
+    display: block;
+    padding: 1.1rem 1.25rem;
+    background-color: $surfaceColorCustom;
+    border: $borderInkWidth solid $borderColorCustom;
+    border-radius: 14px;
+    box-shadow: 3px 3px 0px $borderColorCustom;
+    text-decoration: none;
+    color: $headlineColorCustom;
+    line-height: 1.45;
+    transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+
+    strong {
+      display: block;
+      font-family: $font-family-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: $headlineColorCustom;
+    }
+
+    &:hover {
+      border-color: $borderColorCustom;
+      transform: translate(-2px, -2px);
+      box-shadow: 5px 5px 0px $borderColorCustom;
+    }
+
+    &:active {
+      transform: translate(1px, 1px);
+      box-shadow: 1px 1px 0px $borderColorCustom;
+    }
+
+    .work-desc {
+      display: block;
+      margin-top: 0.35rem;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: rgba($textColorCustom, 0.82);
+    }
+  }
+}
+
+// =============================================================================
+// CALLOUTS (Clean Bento "Good to know" Style)
+// =============================================================================
+.callout {
+  border: $borderInkWidth solid $borderColorCustom !important;
+  border-radius: 12px !important;
+  box-shadow: 2.5px 2.5px 0px $borderColorCustom !important;
+  margin: 1.5rem 0 !important;
+  overflow: hidden;
+  background-color: $surfaceColorCustom !important;
+
+  .callout-header {
+    font-family: $font-family-monospace;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 0.5rem 0.9rem;
+    border-bottom: $borderInkWidth solid $borderColorCustom;
+  }
+
+  .callout-body {
+    padding: 0.9rem 1.1rem;
+    font-size: 0.98rem;
+    color: $textColorCustom;
+  }
+
+  &.callout-note {
+    .callout-header { background-color: $accentButterCustom; color: #78350F; }
+  }
+  &.callout-tip {
+    .callout-header { background-color: $accentMintCustom; color: #14532D; }
+  }
+  &.callout-warning {
+    .callout-header { background-color: #FED7AA; color: #9A3412; }
+  }
+  &.callout-important, &.callout-caution {
+    .callout-header { background-color: $accentRoseCustom; color: #991B1B; }
+  }
+}
+
+// =============================================================================
+// TABLE OF CONTENTS (right margin of posts)
+// =============================================================================
+#quarto-margin-sidebar #TOC {
+  > h2 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: $mutedTextColorCustom;
+    margin-bottom: 0.6rem;
+  }
+
+  ul { margin-bottom: 0; }
+
+  li { line-height: 1.4; }
+
+  a.nav-link {
+    font-size: 0.82rem;
+    line-height: 1.45;
+    padding: 0.32rem 0 0.32rem 0.8rem;
+    color: rgba($textColorCustom, 0.72);
+    overflow-wrap: break-word;
+
+    &:hover { color: $headingColorCustom; }
+    &.active { color: $headingColorCustom; font-weight: 600; }
+  }
+
+  ul ul a.nav-link { padding-left: 1.5rem; font-size: 0.78rem; }
+
+  // code in headings: plain text here, no pill
+  code {
+    font-size: inherit;
+    color: inherit !important;
+    background: none !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0;
+    white-space: normal;
+  }
+}
+
+// =============================================================================
+// POST NAVIGATION (older / newer, added by blog/_post-nav.html)
+// =============================================================================
+.post-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 3.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid $borderColorCustom;
+
+  a {
+    display: block;
+    padding: 0.9rem 1.05rem;
+    background-color: $cardBgColorCustom;
+    border: $borderInkWidth solid $borderColorCustom;
+    border-radius: 12px;
+    box-shadow: 2px 2px 0px $borderColorCustom;
+    text-decoration: none;
+    transition: all 0.15s ease;
+
+    &:hover { transform: translate(-1.5px, -1.5px); box-shadow: 3.5px 3.5px 0px $borderColorCustom; }
+  }
+
+  .post-nav-next { text-align: right; grid-column: 2; }
+
+  @media (max-width: 575.98px) {
+    grid-template-columns: 1fr;
+
+    .post-nav-next { grid-column: 1; }
+  }
+
+  .post-nav-label {
+    display: block;
+    font-size: 0.78rem;
+    color: $mutedTextColorCustom;
+    margin-bottom: 0.15rem;
+  }
+
+  .post-nav-title {
+    display: block;
+    font-family: $font-family-serif;
+    font-weight: 600;
+    font-size: 0.98rem;
+    line-height: 1.45;
+    color: $headlineColorCustom;
+  }
+}
+
+// =============================================================================
+// ABOUT PAGE: keep the icon links in one row on small screens
+// =============================================================================
+div.quarto-about-trestles .about-entity .about-links {
+  flex-direction: row !important;
+
+  .about-link { flex: 0 0 auto; }
+}
+
+// =============================================================================
+// 404 PAGE
+// =============================================================================
+.not-found {
+  text-align: center;
+  padding: 3rem 0 2rem 0;
+
+  .not-found-code {
+    font-family: $font-family-serif;
+    font-size: clamp(4rem, 14vw, 7rem);
+    font-weight: 600;
+    line-height: 1;
+    color: $headingColorCustom;
+    margin-bottom: 0.5rem;
+  }
+
+  .work-grid { max-width: 640px; margin-left: auto; margin-right: auto; }
+}
+
+// =============================================================================
+// ACCESSIBILITY: visible keyboard focus, reduced motion
+// =============================================================================
+:is(a, button, [role="button"], [role="switch"], .post-filter, .category):focus-visible {
+  outline: 2.5px solid $headingColorCustom;
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// Long URLs and inline code in prose wrap instead of widening the page
+main.content :is(p, li, td, dd) {
+  overflow-wrap: anywhere;
+}

@@ -1,0 +1,17 @@
+{
+  "hash": "8b157ad5603fdbc5f83666b5f47da13d",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Hello World\"\ndate: 2026-01-01\ndescription: \"โพสต์ตัวอย่าง — แก้ไขหรือลบแล้วเริ่มเขียนของคุณเอง\"\ncategories: [tutorial]\n---\n\nโพสต์ตัวอย่าง เขียนด้วย Markdown และรันโค้ด R ได้โดยตรง\n\n\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(ggplot2)\nggplot(mtcars, aes(wt, mpg)) + geom_point()\n```\n\n::: {.cell-output-display}\n![กราฟตัวอย่าง](index_files/figure-html/fig-example-1.png){#fig-example width=2100}\n:::\n:::\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

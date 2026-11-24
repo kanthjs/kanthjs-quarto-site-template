@@ -1,0 +1,48 @@
+---
+title: "Your Name"
+pagetitle: "Your Name"
+subtitle: "Your role ∙ Your field ∙ Your skills"   # TODO
+image: images/avatar.svg                            # TODO: replace with your photo
+image-alt: "Your Name"
+page-layout: article
+toc: false
+back-to-top-navigation: false
+
+listing:
+  id: home-posts
+  contents: "blog/*/index.qmd"
+  sort: "date desc"
+  max-items: 2
+  template: _templates/home-posts.ejs
+  fields: [date, title, description]
+  date-format: "D MMM YYYY"
+
+about:
+  template: jolla
+  image-width: 14em
+  image-shape: round
+  links:
+    - icon: github
+      text: GitHub
+      aria-label: GitHub
+      href: https://github.com/YOUR-USERNAME        # TODO
+    - icon: envelope
+      text: Email
+      aria-label: Email
+      href: mailto:you@example.com                  # TODO
+---
+
+แนะนำตัวสั้น ๆ 1–2 ประโยค: คุณคือใคร ทำอะไร สนใจเรื่องอะไร
+
+::: {.home-badges}
+`Topic 1` `Topic 2` `Topic 3`
+:::
+
+::: {.home-section}
+## บทความล่าสุด
+
+::: {#home-posts}
+:::
+
+[ดูบทความทั้งหมด →](blog/index.qmd){.home-more}
+:::

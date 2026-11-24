@@ -1,0 +1,12 @@
+---
+title: "ชื่อหนังสือตัวอย่าง"
+description: "เนื้อหาหลัก 1-2 ประโยค"
+order: 1                                   # ลำดับบนหน้า Books (น้อยขึ้นก่อน)
+# book-read: "https://..."                 # ลิงก์อ่านออนไลน์ (ถ้ามี จะขึ้นปุ่ม "อ่านออนไลน์")
+book-repo: "https://github.com/YOUR-USERNAME/your-book"
+categories: [กำลังเขียน]                   # สถานะ: อ่านออนไลน์ได้ | กำลังเขียน | ฉบับร่าง
+---
+
+รายละเอียดหนังสือ
+
+[อ่านบน GitHub](https://github.com/YOUR-USERNAME/your-book){.btn-link-out target="_blank"}

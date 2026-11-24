@@ -1,0 +1,32 @@
+---
+title: "Talks & Posters"
+pagetitle: "Talks — Your Name"
+description: "งานนำเสนอ โปสเตอร์ และเอกสารเผยแพร่"
+page-layout: full
+---
+
+คัดลอกบล็อก `talk-card` ด้านล่างเพื่อเพิ่มรายการใหม่ วางรูปปกไว้ที่ `images/talks/`
+
+::: {.talks-grid}
+
+::: {.talk-card}
+[![](../images/avatar.svg){.talk-thumb}](https://example.com){target="_blank"}
+
+::: {.talk-body}
+<div class="talk-meta">
+  <span class="talk-badge">2026</span>
+  <span class="talk-badge-type">Poster</span>
+</div>
+
+### Talk title
+
+คำอธิบายสั้น ๆ ของงานนำเสนอ
+
+<div class="talk-actions">
+  <a href="https://example.com" target="_blank" class="talk-btn"><i class="bi bi-file-earmark-pdf"></i> PDF</a>
+  <a href="https://example.com" target="_blank" class="talk-btn-outline"><i class="bi bi-image"></i> View</a>
+</div>
+:::
+:::
+
+:::

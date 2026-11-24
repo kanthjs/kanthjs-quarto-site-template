@@ -1,0 +1,69 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "index.qmd"
+    - "404.qmd"
+    - "about/index.qmd"
+    - "talks/index.qmd"
+    - "r-packages/**/*.qmd"
+    - "books/**/*.qmd"
+    - "blog/**/*.qmd"
+  resources:
+    - "images/**"
+    - "fonts/**"
+    - "robots.txt"
+
+execute:
+  freeze: true
+
+website:
+  title: "Your Name"                                     # TODO
+  site-url: "https://YOUR-USERNAME.github.io/YOUR-REPO"  # TODO: no trailing slash
+  description: "Short description of your site"          # TODO
+  favicon: images/favicon.svg
+
+  navbar:
+    logo: images/logo.svg
+    tools:
+      - icon: github
+        aria-label: "GitHub"
+        href: https://github.com/YOUR-USERNAME            # TODO
+      - icon: rss
+        aria-label: "RSS feed"
+        href: blog/index.xml
+    right:
+      - text: "About"
+        href: about/index.qmd
+      - text: "Blog"
+        href: blog/index.qmd
+      - text: "Books"
+        href: books/index.qmd
+      - text: "Software"
+        href: r-packages/index.qmd
+      - text: "Talks"
+        href: talks/index.qmd
+
+  page-footer:
+    center: "© 2026 Your Name ∙ Made with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme:
+      light: [cosmo, styles.scss]
+      dark: [cosmo, styles.scss, styles-dark.scss]
+    mainfont: "IBM Plex Sans Thai Looped"
+    monofont: "Fira Code"
+    include-in-header:
+      - header.html
+    toc: true
+    toc-title: "สารบัญ"
+    grid:
+      body-width: 860px
+    html-math-method: mathjax
+    lang: th   # change to "en" for an English site
+
+knitr:
+  opts_chunk:
+    fig.showtext: true
+    dpi: 300

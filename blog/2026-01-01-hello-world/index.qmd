@@ -1,0 +1,15 @@
+---
+title: "Hello World"
+date: 2026-01-01
+description: "โพสต์ตัวอย่าง — แก้ไขหรือลบแล้วเริ่มเขียนของคุณเอง"
+categories: [tutorial]
+---
+
+โพสต์ตัวอย่าง เขียนด้วย Markdown และรันโค้ด R ได้โดยตรง
+
+```{r}
+#| label: fig-example
+#| fig-cap: "กราฟตัวอย่าง"
+library(ggplot2)
+ggplot(mtcars, aes(wt, mpg)) + geom_point()
+```

@@ -1,0 +1,17 @@
+---
+title: "Software"
+pagetitle: "Software — Your Name"
+description: "Packages and apps I build."
+---
+
+## Packages
+
+::: {.work-grid}
+[**package-name**[One-line description of what it does]{.work-desc}](https://github.com/YOUR-USERNAME/package-name){.work-card}
+:::
+
+## Apps
+
+::: {.work-grid}
+[**app-name**[One-line description of the app]{.work-desc}](https://example.com){.work-card}
+:::

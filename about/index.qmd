@@ -1,0 +1,38 @@
+---
+title: "About Me"
+pagetitle: "About — Your Name"
+subtitle: "Your role ∙ Your field"        # TODO
+image: ../images/avatar.svg               # TODO: replace with your portrait
+image-alt: "Portrait of Your Name"
+comments: false
+toc: false
+
+about:
+  template: trestles
+  image-width: 26em
+  image-shape: rounded
+  id: hero-heading
+  links:
+    - icon: github
+      text: GitHub
+      aria-label: GitHub
+      href: https://github.com/YOUR-USERNAME   # TODO
+    - icon: envelope
+      text: Email
+      aria-label: Email
+      href: mailto:you@example.com             # TODO
+
+page-layout: full
+---
+
+::: {#hero-heading}
+
+## สวัสดี 👋
+
+เขียนแนะนำตัวที่นี่ — คุณทำงานอะไร สนใจอะไร และเว็บนี้มีอะไรให้อ่าน
+
+:::
+
+## Education & Experience
+
+- ปี–ปี: ตำแหน่ง / สถาบัน

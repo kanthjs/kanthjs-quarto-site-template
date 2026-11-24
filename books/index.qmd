@@ -1,0 +1,15 @@
+---
+title: "Books"
+pagetitle: "Books — Your Name"
+description: "หนังสือออนไลน์และเอกสารประกอบ"
+listing:
+  contents: "*/index.qmd"
+  template: _book-list.ejs
+  sort: "order"
+  categories: true
+  fields: [title, description, categories, book-read, book-repo]
+  page-size: 50
+toc: false
+---
+
+หนังสือที่เขียนเสร็จแล้วและที่กำลังเขียน ป้ายบนการ์ดบอกสถานะของแต่ละเล่ม

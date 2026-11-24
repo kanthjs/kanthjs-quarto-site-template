@@ -1,0 +1,20 @@
+---
+title: "ไม่พบหน้านี้"
+pagetitle: "404 — Your Name"
+toc: false
+---
+
+::: {.not-found}
+::: {.not-found-code}
+404
+:::
+
+หน้าที่คุณเปิดไม่มีอยู่ หรืออาจถูกย้ายไปแล้ว ลองเริ่มจากหน้าเหล่านี้
+
+::: {.work-grid}
+[**Blog**[บทความทั้งหมด]{.work-desc}](/blog/){.work-card}
+[**Books**[หนังสือ]{.work-desc}](/books/){.work-card}
+[**Software**[ซอฟต์แวร์และเครื่องมือ]{.work-desc}](/r-packages/){.work-card}
+[**หน้าแรก**[กลับไปหน้าแรก]{.work-desc}](/){.work-card}
+:::
+:::
