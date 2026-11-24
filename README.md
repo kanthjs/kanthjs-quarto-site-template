@@ -4,6 +4,16 @@ Created by [Kanthanawit Jaisong](https://github.com/kanthjs) · ตัวอย�
 
 Template เว็บไซต์ส่วนตัว/บล็อกด้วย [Quarto](https://quarto.org) — ธีม warm-paper, ฟอนต์ไทย IBM Plex Sans Thai Looped, dark mode, หน้า Blog / Books / Software / Talks และ deploy อัตโนมัติด้วย GitHub Actions
 
+## ตัวอย่าง
+
+| Light | Dark |
+| :-: | :-: |
+| ![หน้าแรก (light)](images/screenshots/home.png) | ![หน้าแรก (dark)](images/screenshots/home-dark.png) |
+
+| Blog | Post | About |
+| :-: | :-: | :-: |
+| ![หน้า Blog](images/screenshots/blog.png) | ![หน้าโพสต์](images/screenshots/post.png) | ![หน้า About](images/screenshots/about.png) |
+
 ## เริ่มใช้งาน
 
 1. กด **Use this template** → **Create a new repository** (หรือ Fork)
