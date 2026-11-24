@@ -1,4 +1,6 @@
-# Quarto Personal Site Template
+# kanthjs Quarto Site Template
+
+Created by [Kanthanawit Jaisong](https://github.com/kanthjs) · ตัวอย่างเว็บจริง: [kanthanawit.in.th](https://kanthanawit.in.th)
 
 Template เว็บไซต์ส่วนตัว/บล็อกด้วย [Quarto](https://quarto.org) — ธีม warm-paper, ฟอนต์ไทย IBM Plex Sans Thai Looped, dark mode, หน้า Blog / Books / Software / Talks และ deploy อัตโนมัติด้วย GitHub Actions
 
